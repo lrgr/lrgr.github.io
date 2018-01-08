@@ -1,0 +1,36 @@
+# Site settings
+title: Leiserson Research Group | University of Maryland, College Park
+description: > # this means to ignore newlines until "baseurl:"
+    <a class='grey-text text-lighten-4' style='text-decoration:underline' href='http://umd.edu/' target='_new'><b>University of Maryland, College Park</b></a><br/>
+    <a class='grey-text text-lighten-4' style='text-decoration:underline' href='http://cbcb.umd.edu/' target='_new'><b>Center for Bioinformatics & Computational Biology</b></a><br/>
+    8314 Paint Branch Dr.<br/>
+    College Park, MD 20742 USA<br/>
+url: "http://lrgr.io"
+baseurl: ""
+logo: <b>Leiserson</b> Research Group
+paginate: 5
+paginate_path: "/page:num/"
+owner:
+    email: mdml@cs.umd.edu
+    facebook:
+        show: false
+        name: ""
+        url: ""
+    github:
+        show: true
+        username: "lrgr"
+    twitter:
+        show: true
+        username: "maxleiserson"
+    disqus:
+        show: false
+        username: "ichihararifa"
+    linkedin:
+        show: false
+        profile: "https://linkedin.com/in/your-profile-id-here"
+sass:
+    sass_dir: _sass
+    style: compressed
+permalink: "/article/:title"
+markdown: kramdown
+highlighter: rouge
