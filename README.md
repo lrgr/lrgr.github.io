@@ -1,5 +1,8 @@
-# Jekyll-Materialize
-Jekyll powered blog with Google materialize css by materializecss.com
+# Leiserson Research Group website
+
+# Credits
+
+Built with Jekyll Materialize: Jekyll powered blog with Google materialize css by materializecss.com.
 
 ### Demo
 https://yuune.github.io/jekyll-materialize/
