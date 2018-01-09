@@ -7,6 +7,20 @@
 div#news td.date{ vertical-align:top; text-align:right; }
 div#news table td{ padding:3px;  }
 
+div#people img{ max-width:160px; }
+div#people ul.contact-info{font-size:80%}
+div#people ul.contact-info ul{list-style: none;}
+div#people ul.contact-info li a{margin-right:0px;}
+.list-inline { padding-left: 0; margin-left: -5px; list-style: none; }
+.list-inline > li { display: inline-block; padding-right: 5px; padding-left: 5px; }
+@media only screen and (max-device-width: 480px) {
+          .list-inline > li{
+             display:block;
+          }
+    }
+div#people table tr{border:none;}
+div#people table td{margin-bottom:0px;margin-top:0px;padding-top:0px;padding-bottom:0px;}
+
 .collapsible-header.publication{ line-height: 1.5rem; padding: 1rem; }
 div.publication-links a{ margin-right:15px; }
 ul.publication-legend li{display:inline;}
