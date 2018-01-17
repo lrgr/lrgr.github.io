@@ -2,6 +2,7 @@
 layout: page
 title: Resources
 permalink: /resources/
+top_navbar: false
 ---
 
 ##### Blogs and social media

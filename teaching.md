@@ -2,6 +2,7 @@
 layout: page
 title: Teaching
 permalink: /teaching/
+top_navbar: true
 ---
 
 ##### Spring 2018
