@@ -1,5 +1,10 @@
 <div class="navbar-fixed">
-  <nav class="white blue-text z-depth-0">
+    <!-- Research Dropdown Structure -->
+    <ul id="research-dropdown" class="dropdown-content">
+      <li><a href="{{ site.baseurl }}/research">Overview</a></li>
+      <li><a href="{{ site.baseurl }}/publications">Publications</a></li>
+    </ul>
+    <nav class="white blue-text z-depth-0">
     <div class="nav-wrapper">
       <div class="container container-large">
         <a class="brand-logo hide-on-small-only" href="{{ site.baseurl }}/" style="padding-left:0px;padding-right:10px">
@@ -10,18 +15,17 @@
         </a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger right teal-text"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          {% for page in site.pages %}
-              {% if page.top_navbar %}
-                  <li><a href="{{ page.url | prepend: site.baseurl }}" class="teal-text">{{ page.title }}</a></li>
-              {% endif %}
-          {% endfor %}
+            <li><a href="{{ site.baseurl }}/people" class="teal-text">People</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="research-dropdown"><span class='teal-text'>Research</span><i class="material-icons right teal-text">arrow_drop_down</i></a></li>
+            <li><a href="{{ site.baseurl }}/resources" class="teal-text">Resources</a></li>
+            <li><a href="{{ site.baseurl }}/teaching" class="teal-text">Teaching</a></li>
         </ul>
         <ul class="sidenav" id="mobile-demo">
-          {% for page in site.pages %}
-              {% if page.title %}
-                  <li><a href="{{ page.url | prepend: site.baseurl }}" class="teal-text">{{ page.title }}</a></li>
-              {% endif %}
-          {% endfor %}
+          <li><a href="{{ site.baseurl }}/people" class="teal-text">People</a></li>
+          <li><a href="{{ site.baseurl }}/publications" class="teal-text">Publications</a></li>
+          <li><a href="{{ site.baseurl }}/research" class="teal-text">Research</a></li>
+          <li><a href="{{ site.baseurl }}/resources" class="teal-text">Resources</a></li>
+          <li><a href="{{ site.baseurl }}/teaching" class="teal-text">Teaching</a></li>
         </ul>
       </div>
     </div>
