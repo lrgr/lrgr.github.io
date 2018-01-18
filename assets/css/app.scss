@@ -6,21 +6,23 @@
 
 div#news td.date{ vertical-align:top; text-align:right; }
 div#news table td{ padding:3px;  }
+div#group-contact-info{text-align:right;font-size:120%;}
 
 div#people img{ width:160px; }
-div#people ul.contact-info{font-size:80%}
-div#people ul.contact-info ul{list-style: none;}
-div#people ul.contact-info li a{margin-right:0px;}
 .list-inline { padding-left: 0; margin-left: -5px; list-style: none; }
 .list-inline > li { display: inline-block; padding-right: 5px; padding-left: 5px; }
-@media only screen and (max-device-width: 480px) {
+@media #{$small-and-down} {
           .list-inline > li{
              display:block;
           }
+          div#people div.img-wrapper{ text-align:center;}
+          div#people h5{text-align: center;}
+          div#group-contact-info{text-align:left}
     }
-div#people p{margin-left:15px}
+div#people p, div#people table, div#people ul{margin-left:0px;}
 div#people table tr{border:none;}
 div#people table td{margin-bottom:0px;margin-top:0px;padding-top:0px;padding-bottom:0px;}
+div#people table.contact-info td.icon{width:10px;}
 
 .collapsible-header.publication{ line-height: 1.5rem; padding: 1rem; }
 div.publication-links a{ margin-right:15px; }
