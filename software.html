@@ -1,0 +1,53 @@
+---
+layout: page
+title: Software
+permalink: /software
+top_navbar: true
+---
+<div class="row" id="software"></div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    // Setup
+    var software = d3.select('#software'); // Wrapper for all content
+    var formatTime = d3.timeFormat("%b %d, %Y"); // E.g. June 30, 2018
+    var blacklist = d3.set(['mutation-signature-explorer-server', 'HubAlign']);
+
+    // Get all public repos
+    $.getJSON( "https://api.github.com/orgs/lrgr/repos", function( repos ) {
+      // Sort repos by stars and exclude the blacklisted ones
+      repos.sort(function(a, b){
+        return d3.descending(a.stargazers_count, b.stargazers_count)
+      });
+      repos = repos.filter(function(d){
+        return !blacklist.has(d.name);
+      });
+
+      // Add a card per repo
+      var card_wrap = software.selectAll('.card-wrap')
+        .data(repos).enter()
+        .append('div')
+        .attr('class', 'col s12 m12 l6');
+
+      var cards = card_wrap.append('div').attr('class', 'card tiny');
+      var card_content = cards.append('div')
+        .attr('class', 'card-content')
+        .style('min-height', '200px');
+      var card_title = card_content.append('span')
+        .attr('class', 'card-title teal-text')
+        .append('a')
+        .attr('target', '_new')
+        .attr('href', function(d){ return d.html_url; })
+        .text(function (d){ return d.name; });
+      card_content.append('p').text(function(d){ return d.description; });
+      cards.append('div')
+        .attr('class', 'card-action')
+        .append('a')
+        // .style('font-size', '90%')
+        .text(function(d){
+          return 'Updated: ' + formatTime(new Date(d.updated_at));
+        });
+    });
+  });
+</script>

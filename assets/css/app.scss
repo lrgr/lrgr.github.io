@@ -23,6 +23,7 @@ div#people div.card-content{ padding:10px; }
     }
 div#people p, table.contact-info, div#people ul{margin-left:0px;}
 div.person-info{display:inline-block;width:180px;}
+div.person-info .img-wrapper{margin-top:10px}
 table.contact-info tr{border:none;}
 table.contact-info td{margin-bottom:0px;margin-top:0px;padding-top:0px;padding-bottom:0px;}
 table.contact-info td.icon{width:10px;}
@@ -135,3 +136,5 @@ footer.page-footer {
   line-height: 1.5;
   letter-spacing: -0.003em;
  }
+
+.card.tiny{ height:250px; }
