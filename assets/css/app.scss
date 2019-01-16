@@ -4,6 +4,8 @@
 @import "materialize";
 @import "fontawesome";
 
+div#research-topics div.card div.card-image{height:180px;}
+div#research-topics div.card div.card-image img{margin-left: 50%;transform: translateX(-50%);height:180px;overflow-x:none;width:auto;}
 div#news td.date{ vertical-align:top; text-align:right; }
 div#news table td{ padding:3px;  }
 div#group-contact-info{text-align:right;font-size:120%;}

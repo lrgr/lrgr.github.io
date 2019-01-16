@@ -19,25 +19,116 @@ layout: default
     </h5>
     <p class="caption" style="font-size:120%">
       We are a research group in the <a href="https://cs.umd.edu" target="_new">Department of Computer Science</a> and <a href="https://cbcb.umiacs.umd.edu" target="_new">Center for Bioinformatics and Computational Biology</a> at the University of Maryland.
-      Our research is focused on designing algorithms to make advances in public health, particularly related to cancer.
+      Our research is focused on designing algorithms to make advances in public health, particularly related to <b><i>cancer</i></b>.
+    </p>
+    <p class="caption" style="font-size:120%">
       Current topics of interest include cancer genomics, cancer immunotherapy, and network biology.
     </p>
-    <a class="waves-effect waves-light btn" href="{{ site.baseurl }}/research">Read more</a>
   </div>
-  <div class="row">
-    <div class="col l12">
-      <div class="card" id="news">
-        <div class="card-content">
-          <span class="card-title teal-text"><h5>Recent news</h5></span>
-          <table>
-            <tr><td class="date">12/21</td><td>Our work on cross-species network embeddings has been <a href="http://recomb2018.fr/program/" target="_new">accepted to RECOMB 2018</a>!</td></tr>
-            <tr><td class="date">11/27</td><td>Max gives a talk at a <a href="https://www.birs.ca/events/2017/5-day-workshops/17w5134/schedule" target="_new">CMO-BIRS workshop</a> in Oaxaca, Mexico</td></tr>
-            <tr><td class="date">09/07</td><td>Jason Fan joins the group -- welcome Jason!</td></tr>
-            <tr><td class="date">08/01</td><td>Founding of the Leiserson Research Group at the University of Maryland!</td></tr>
-          </table>
+  <div class="row" id="research-topics">
+    <div class="col m12 s12 l4">
+      <div class="card medium blue-grey darken-1">
+        <div class='card-image'>
+          <img src="{{site.baseurl}}/assets/img/drivers.jpg">
         </div>
-        <!-- <div class="card-action"></div> -->
+        <div class='card-content white-text'>
+          <span class="card-title">Somatic mutations</span>
+          <p>What are the causes and consequences of somatic mutations in cancer?</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Learn more</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m12 l4">
+      <div class="card medium blue-grey darken-1">
+        <div class='card-image'>
+          <img src="{{site.baseurl}}/assets/img/cross-species-networks.jpg">
+        </div>
+        <div class='card-content white-text'>
+          <span class="card-title">Network biology</span>
+          <p>What are the shared patterns in biological networks from different species?</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Learn more</a>
+        </div>
+      </div>
+    </div>
+    <div class="col m12 s12 l4">
+      <div class="card medium blue-grey darken-1">
+        <div class='card-image'>
+          <img src="{{site.baseurl}}/assets/img/multifactorial-immune-response-coefficients.jpg">
+        </div>
+        <div class='card-content white-text'>
+          <span class="card-title">Immunotherapy</span>
+          <p>What factors gathered from patients before treatment are predictive of response?</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Learn more</a>
+        </div>
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col s12">
+      <h5>Recent news</h5>
+      <ul class="collection" id="news">
+        <li class="collection-item">
+          <b>Dec 31, 2018</b><br/>
+          Our collaboration with Microsoft Research on predicting response to immunotherapy in bladder cancers is out in <a href="https://doi.org/10.1371/journal.pone.0208422" target="_new">PLoS ONE</a>!
+        </li>
+        <li class="collection-item">
+          <b>Dec 1, 2018</b><br/>
+          Max is PC co-chair for <a href='http://recombccb.recomb2019.org' target='_new'>RECOMB Computational Cancer Biology (CCB)</a> in Washington, DC on May 3-4, 2019.
+        </li>
+        <li class="collection-item">
+          <b>Sep 08, 2018</b><br/>
+          The Hierarchical HotNet algorithm for identifying significantly altered subnetworks is published in <a href="https://academic.oup.com/bioinformatics/article/34/17/i972/5093236?rss=1" target="_new">ECCB/Bioinformatics</a>!
+        </li>
+        <li class="collection-item">
+          <b>Dec 21, 2017</b><br/>
+          Our work on cross-species network embeddings has been <a href="http://recomb2018.fr/program/" target="_new">accepted to RECOMB 2018</a>!
+        </li>
+        <li class="collection-item">
+          <b>Nov 27, 2017</b><br/>
+          Max gives a talk at a <a href="https://www.birs.ca/events/2017/5-day-workshops/17w5134/schedule" target="_new">CMO-BIRS workshop</a> in Oaxaca, Mexico
+        </li>
+        <li class="collection-item">
+          <b>Sep 07, 2017</b><br/>
+          Jason Fan joins the group -- welcome Jason!
+        </li>
+        <li class="collection-item">
+          <b>Aug 01, 2017</b><br/>
+          Founding of the Leiserson Research Group at the University of Maryland!
+        </li>
+      </ul>
+      <ul class="pagination" id="pager">
+      </ul>
+    </div>
+  </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://pagination.js.org/dist/2.1.4/pagination.min.js"></script>
+<script type="text/javascript">
+  // Preprocess the data
+  var news_items = [],
+      indices = [];
+  $('ul#news li').each(function(d, i){
+    news_items.push($(this).html());
+    indices.push(d);
+  });
+
+  // Create the pagination
+  var dataContainer = $('ul#news');
+  $('#pager').pagination({
+      dataSource: indices,
+      pageSize: 5,
+      callback: function(data, pagination) {
+        var html = '';
+        data.forEach(function(i){
+          html += '<li class="collection-item">' + news_items[i] + '</li>';
+        });
+        dataContainer.html(html);
+      }
+  });
+</script>
