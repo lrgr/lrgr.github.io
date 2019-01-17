@@ -6,106 +6,120 @@ top_navbar: false
 ---
 
 <div id="research">
-  <h5>Overview</h5>
-  <p>
-    Cancer is a collection of diseases with many causes. This heterogeneity limits the efficacy of standard approaches that give the same treatment to large subpopulations of patients.
-    The promise of a personalized approach to cancer therapy lies in expanding opportunities for treatment by identifying patients who are likely to respond but who do not meet the traditional selection criteria, and in predicting patients who will not respond so they do not endure unnecessary adverse effects or costs.
-    Standard approaches to matching cancer patients with therapy have been coarse, relying on tumor histology (what the tumor looks like under a microscope), the tumor tissue-of-origin, and a handful of molecular markers.
-  </p>
+  <div class="row">
+    <h5>Overview</h5>
+    <p>
+      Cancer is a collection of diseases with many causes. This heterogeneity limits the efficacy of standard approaches that give the same treatment to large subpopulations of patients.
+      The promise of a personalized approach to cancer therapy lies in expanding opportunities for treatment by identifying patients who are likely to respond but who do not meet the traditional selection criteria, and in predicting patients who will not respond so they do not endure unnecessary adverse effects or costs.
+      Standard approaches to matching cancer patients with therapy have been coarse, relying on tumor histology (what the tumor looks like under a microscope), the tumor tissue-of-origin, and a handful of molecular markers.
+    </p>
 
-  <p>
-    To obtain a finer-grained picture, researchers are collecting vast amounts of molecular data from patients with cancer, with large public datasets recently becoming available.
-    The challenge is to investigate this data to understand the functional state of the tumor and translate this knowledge into personalized therapy.
-    Molecular data such as from DNA- and RNA-sequencing provide a lens on the perturbed cellular functions driving tumor growth, the interaction of the tumor with other cells in the body, and much more.
-    However, molecular data is often noisy and high-dimensional with many (often unobserved) confounders.
-    Thus, realizing personalized cancer therapy requires overcoming challenging computational problems.
-  </p>
+    <p>
+      To obtain a finer-grained picture, researchers are collecting vast amounts of molecular data from patients with cancer, with large public datasets recently becoming available.
+      The challenge is to investigate this data to understand the functional state of the tumor and translate this knowledge into personalized therapy.
+      Molecular data such as from DNA- and RNA-sequencing provide a lens on the perturbed cellular functions driving tumor growth, the interaction of the tumor with other cells in the body, and much more.
+      However, molecular data is often noisy and high-dimensional with many (often unobserved) confounders.
+      Thus, realizing personalized cancer therapy requires overcoming challenging computational problems.
+    </p>
 
-  <img src="{{sites.baseurl}}/assets/img/precision-oncology.jpg" title="Precision Oncology" />
+    <img src="{{sites.baseurl}}/assets/img/precision-oncology.jpg" title="Precision Oncology" />
 
-  <p>
-    Making headway on the promise of personalized cancer therapy requires making connections between key problems in cancer biology, statistics, and computer science.
-    Our research group is especially innovative in that it combines a breadth of understanding of multiple areas with the depth of understanding necessary to connect core problems, develop a computational approach, and apply the approach to gain new biological knowledge.
-    In that vein, our major research initiatives span three classes of cancer therapy, and span understanding the functional state of the tumor and translating molecular data into personalized therapy.
-    To begin to tackle these challenges, we develop methods in many areas of computer science and statistics, including graph theory, probabilistic models, and machine learning.
-  </p>
+    <p>
+      Making headway on the promise of personalized cancer therapy requires making connections between key problems in cancer biology, statistics, and computer science.
+      Our research group is especially innovative in that it combines a breadth of understanding of multiple areas with the depth of understanding necessary to connect core problems, develop a computational approach, and apply the approach to gain new biological knowledge.
+      In that vein, our major research initiatives span three classes of cancer therapy, and span understanding the functional state of the tumor and translating molecular data into personalized therapy.
+      To begin to tackle these challenges, we develop methods in many areas of computer science and statistics, including graph theory, probabilistic models, and machine learning.
+    </p>
+  </div>
+  <div class="row">
+    <h5>Major research initiatives and approaches</h5>
+    <a name="mutations-in-cancer"></a>
+    <p>
+      Our primary research focus is on understanding the causes and consequences of mutations in cancer.
+      Cancer is driven in large part by somatic mutations that accumulate throughout the lifetime of an individual.
+      Identifying the driver mutations that cause cancer can expand opportunities for targeted therapy, e.g. where a drug inhibits a driver gene that cancer cells rely on.
+      Driver mutations target pathways -- each containing many genes that can be perturbed in many ways -- which makes distinguishing the few drivers from the numerous other mutations difficult.
+      Our research seeks to address this challenge by developing methods to identify statistically significant combinations of driver mutations in biological networks [1], or with combinatorial optimization of statistical scores [2-3].
+    </p>
 
-  <h5>Major research initiatives and approaches</h5>
-  <a name="mutations-in-cancer"></a>
-  <p>
-    Our primary research focus is on understanding the causes and consequences of mutations in cancer.
-    Cancer is driven in large part by somatic mutations that accumulate throughout the lifetime of an individual.
-    Identifying the driver mutations that cause cancer can expand opportunities for targeted therapy, e.g. where a drug inhibits a driver gene that cancer cells rely on.
-    Driver mutations target pathways -- each containing many genes that can be perturbed in many ways -- which makes distinguishing the few drivers from the numerous other mutations difficult.
-    Our research seeks to address this challenge by developing methods to identify statistically significant combinations of driver mutations in biological networks [1], or with combinatorial optimization of statistical scores [2-3].
-  </p>
+    <img src='{{site.baseurl}}/assets/img/driver-mutations-and-pathways.jpg' title="Driver mutations target pathways" />
 
-  <img src='{{site.baseurl}}/assets/img/driver-mutations-and-pathways.jpg' title="Driver mutations target pathways" />
+    <p>
+      We also study cancer mutation datasets to understand the history of mutational processes shaping the cancer genome.
+      Many successful cancer therapies work by causing DNA damage or inhibiting DNA damage repair, which cancer cells are less able to survive than healthy cells.
+      Thus, identifying molecular markers for mutational processes such as DNA repair deficiencies is a priority.
+      Large cancer sequencing projects have recently revealed dozens of signatures of mutational processes, each consisting of a different pattern of base substitutions.
+      A major unmet challenge lies in characterizing the signatures with unknown causes. This is a difficult computational problem because dozens of factors affect the mutational process activity in a given cell, and combinations of factors sometimes leave similar signatures.
+      Our approach to this challenge is to use probabilistic models of mutation signatures and their properties or covariates in order to distinguish similar signatures, discover rare signatures, and infer their underlying causes.
+      One such property we are studying is sequential dependency along the genome [4], as some mutational processes cause mutations in localized clusters.
+    </p>
 
-  <p>
-    We also study cancer mutation datasets to understand the history of mutational processes shaping the cancer genome.
-    Many successful cancer therapies work by causing DNA damage or inhibiting DNA damage repair, which cancer cells are less able to survive than healthy cells.
-    Thus, identifying molecular markers for mutational processes such as DNA repair deficiencies is a priority.
-    Large cancer sequencing projects have recently revealed dozens of signatures of mutational processes, each consisting of a different pattern of base substitutions.
-    A major unmet challenge lies in characterizing the signatures with unknown causes. This is a difficult computational problem because dozens of factors affect the mutational process activity in a given cell, and combinations of factors sometimes leave similar signatures.
-    Our approach to this challenge is to use probabilistic models of mutation signatures and their properties or covariates in order to distinguish similar signatures, discover rare signatures, and infer their underlying causes.
-    One such property we are studying is sequential dependency along the genome [4], as some mutational processes cause mutations in localized clusters.
-  </p>
+    <img src='{{site.baseurl}}/assets/img/mutation-signature.jpg' title="Example of UV radiation signature" />
 
-  <img src='{{site.baseurl}}/assets/img/mutation-signature.jpg' title="Example of UV radiation signature" />
+    <a name="cancer-immunotherapy"></a>
+    <p>
+      Our research also includes initiatives for improving to two other types of cancer therapy -- immunotherapy and synthetic lethal therapy -- that have become major success stories over the past decade.
+      Immunotherapy works by harnessing a patient’s own immune system to destroy cancer cells, and has allowed patients with late stage cancer to make unprecedented recoveries.
+      However, a minority of patients respond to the most common type of immunotherapy, many patients experience adverse effects, and the reasons for the differences in response are not yet well understood.
+      Predicting which patients will respond is a particularly difficult challenge as it involves understanding the interactions of the tumor with the immune system, as well as the clinical history of the patient.
+      As part of the Stand Up 2 Cancer and Microsoft Research Convergence 2.0 program, we seek to develop multifactorial models of response to immunotherapy, beginning with bladder cancers [5].
+    </p>
 
-  <a name="cancer-immunotherapy"></a>
-  <p>
-    Our research also includes initiatives for improving to two other types of cancer therapy -- immunotherapy and synthetic lethal therapy -- that have become major success stories over the past decade.
-    Immunotherapy works by harnessing a patient’s own immune system to destroy cancer cells, and has allowed patients with late stage cancer to make unprecedented recoveries.
-    However, a minority of patients respond to the most common type of immunotherapy, many patients experience adverse effects, and the reasons for the differences in response are not yet well understood.
-    Predicting which patients will respond is a particularly difficult challenge as it involves understanding the interactions of the tumor with the immune system, as well as the clinical history of the patient.
-    As part of the Stand Up 2 Cancer and Microsoft Research Convergence 2.0 program, we seek to develop multifactorial models of response to immunotherapy, beginning with bladder cancers [5].
-  </p>
+    <a name="network-biology"></a>
+    <p>
+      Another promising therapy is based on synthetic lethality.
+      Some pairs of genes are pairwise essential (also known as synthetically lethal), such that a cell can live without gene A or gene B, but not without both.
+      If gene A and B have a synthetic lethal interaction, a therapy could selectively kill the cancer cells with a mutation in gene A by inhibiting gene B.
+      The challenge lies in identifying pairs of genes with synthetic lethal interactions, but comprehensive maps of such genetic interactions are only available in model organisms such as yeast.
+      We seek to develop methods to prioritize which pairs of genes to test for interactions, leveraging information from species with comprehensive maps.
+      Our first approach to this problem was to embed genes from different species in the same feature space using a multi-network graph kernel, and perform supervised learning [6].
+    </p>
 
-  <a name="network-biology"></a>
-  <p>
-    Another promising therapy is based on synthetic lethality.
-    Some pairs of genes are pairwise essential (also known as synthetically lethal), such that a cell can live without gene A or gene B, but not without both.
-    If gene A and B have a synthetic lethal interaction, a therapy could selectively kill the cancer cells with a mutation in gene A by inhibiting gene B.
-    The challenge lies in identifying pairs of genes with synthetic lethal interactions, but comprehensive maps of such genetic interactions are only available in model organisms such as yeast.
-    We seek to develop methods to prioritize which pairs of genes to test for interactions, leveraging information from species with comprehensive maps.
-    Our first approach to this problem was to embed genes from different species in the same feature space using a multi-network graph kernel, and perform supervised learning [6].
-  </p>
+    <img src='{{site.baseurl}}/assets/img/cross-species-representations.jpg' title="Cross-species Network Representations" />
+  </div>
+  <div class="row">
+    <h5>Other topics of interests</h5>
+    <p>
+      <b>Fairness, accountability, and transparency in machine learning.</b>
+      Recent advances in data-driven machine learning have led to its widespread adoption for building tools in areas such as natural language processing and computer vision.
+      However, despite some of these tools being used by millions of people, there is currently a deficit of computational methods for ensuring these tools are fair or accountable.
+      Consequently, machines often learn the bias encoded in their input data, from racial bias in image recognition to gender bias in word choice.
+      We seek to develop methods to discover this bias in existing tools or models, and/or counter this bias either before or after the model is trained.
+      Our initial work in collaboration with researchers at Microsoft Research New England examined biases in word embeddings and in image retrieval [7-8].
+    </p>
+  </div>
 
-  <img src='{{site.baseurl}}/assets/img/cross-species-representations.jpg' title="Cross-species Network Representations" />
-
-  <h5>Other topics of interests</h5>
-  <p>
-    <b>Fairness, accountability, and transparency in machine learning.</b>
-    Recent advances in data-driven machine learning have led to its widespread adoption for building tools in areas such as natural language processing and computer vision.
-    However, despite some of these tools being used by millions of people, there is currently a deficit of computational methods for ensuring these tools are fair or accountable.
-    Consequently, machines often learn the bias encoded in their input data, from racial bias in image recognition to gender bias in word choice.
-    We seek to develop methods to discover this bias in existing tools or models, and/or counter this bias either before or after the model is trained.
-    Our initial work in collaboration with researchers at Microsoft Research New England examined biases in word embeddings and in image retrieval [7-8].
-  </p>
-
-  <h5>Relevant publications</h5>
-  <ol>
-    <li>Leiserson*, Vandin*, et al. Nature Genetics (2015). doi: <a href='https://dx.doi.org/10.1038/ng.3168' target='_new'>10.1038/ng.3168</a>.</li>
-    <li>Leiserson*, Wu et al. Genome Biology (2015). doi: <a href='https://dx.doi.org/10.1186/s13059-015-0700-7' target='_new'>10.1186/s13059-015-0700-7</a>.</li>
-    <li>Leiserson et al. Bioinformatics/ECCB (2016). doi: <a href='https://dx.doi.org/10.1093/bioinformatics/btw462' target='_new'>10.1093/bioinformatics/btw462</a>.</li>
-    <li>Huang*, Sason*, Wojtowicz*, et al. bioRxiv (2018). doi: <a href='https://dx.doi.org/10.1101/392639' target='_new'>10.1101/392639</a>. (in revision)</li>
-    <li>Leiserson et al. PLOS ONE (2018). doi: <a href='https://dx.doi.org/10.1371/journal.pone.0208422' target='_new'>10.1371/journal.pone.0208422</a>.</li>
-    <li>Fan et al. RECOMB/bioRxiv (2018). doi: <a href='https://dx.doi.org/10.1101/229211' target='_new'>10.1101/229211</a>. (in revision)</li>
-    <li>Swinger, et al. AAAI/ACM Artifical Intelligence, Ethics, and Society (2019; to appear). arXiv: <a href='https://arxiv.org/abs/1812.08769' target='_new'>1812.08769</a>.</li>
-    <li>Dwork, et al. ACM Fairness, Accountability, and Transparency (2018) <a href='http://proceedings.mlr.press/v81/dwork18a.html' target='_new'>PMLR 81:119-133</a>.</li>
-  </ol>
-  <h5>Key Collaborators</h5>
-  <ul>
-    <li><a href='https://www.cs.bu.edu/faculty/crovella/' target='_new'>Mark Crovella (Boston University)</a></li>
-    <li><a href='https://www.khoury.northeastern.edu/people/benjamin-hescott/' target='_new'>Ben Hescott (Northeastern University)</a></li>
-    <li><a href='https://www.ncbi.nlm.nih.gov/CBBresearch/Przytycka/index.cgi#research' target='_new'>Teresa Przytycka (NCBI)</a></li>
-    <li><a href='http://compbio.cs.brown.edu/' target='_new'>Ben Raphael (Princeton University)</a></li>
-    <li><a href='https://ccr.cancer.gov/cancer-data-science-laboratory/eytan-ruppin' target='_new'>Eytan Ruppin (NCI)</a></li>
-    <li><a href='https://www.cs.tau.ac.il/~roded/' target='_new'>Roded Sharan (Tel Aviv University)</a></li>
-  </ul>
-  <h5>Funding</h5>
-  <img src='{{site.baseurl}}/assets/img/University_of_Maryland_informal_seal.jpg' alt="University of Maryland" style="height:200px;width:auto" />
-  <img src='https://s0.wp.com/wp-content/themes/vip/czi/images/build/CZ_LOGO.svg' style="height:200px;width:auto" />
+  <div class="row">
+    <h5>Relevant publications</h5>
+    <ol>
+      <li>Leiserson*, Vandin*, et al. Nature Genetics (2015). doi: <a href='https://dx.doi.org/10.1038/ng.3168' target='_new'>10.1038/ng.3168</a>.</li>
+      <li>Leiserson*, Wu et al. Genome Biology (2015). doi: <a href='https://dx.doi.org/10.1186/s13059-015-0700-7' target='_new'>10.1186/s13059-015-0700-7</a>.</li>
+      <li>Leiserson et al. Bioinformatics/ECCB (2016). doi: <a href='https://dx.doi.org/10.1093/bioinformatics/btw462' target='_new'>10.1093/bioinformatics/btw462</a>.</li>
+      <li>Huang*, Sason*, Wojtowicz*, et al. bioRxiv (2018). doi: <a href='https://dx.doi.org/10.1101/392639' target='_new'>10.1101/392639</a>. (in revision)</li>
+      <li>Leiserson et al. PLOS ONE (2018). doi: <a href='https://dx.doi.org/10.1371/journal.pone.0208422' target='_new'>10.1371/journal.pone.0208422</a>.</li>
+      <li>Fan et al. RECOMB/bioRxiv (2018). doi: <a href='https://dx.doi.org/10.1101/229211' target='_new'>10.1101/229211</a>. (in revision)</li>
+      <li>Swinger, et al. AAAI/ACM Artifical Intelligence, Ethics, and Society (2019; to appear). arXiv: <a href='https://arxiv.org/abs/1812.08769' target='_new'>1812.08769</a>.</li>
+      <li>Dwork, et al. ACM Fairness, Accountability, and Transparency (2018) <a href='http://proceedings.mlr.press/v81/dwork18a.html' target='_new'>PMLR 81:119-133</a>.</li>
+    </ol>
+  </div>
+  <div class="row">
+    <h5>Key Collaborators</h5>
+    <ul>
+      <li><a href='https://www.cs.bu.edu/faculty/crovella/' target='_new'>Mark Crovella (Boston University)</a></li>
+      <li><a href='https://www.khoury.northeastern.edu/people/benjamin-hescott/' target='_new'>Ben Hescott (Northeastern University)</a></li>
+      <li><a href='https://www.ncbi.nlm.nih.gov/CBBresearch/Przytycka/index.cgi#research' target='_new'>Teresa Przytycka (NCBI)</a></li>
+      <li><a href='http://compbio.cs.brown.edu/' target='_new'>Ben Raphael (Princeton University)</a></li>
+      <li><a href='https://ccr.cancer.gov/cancer-data-science-laboratory/eytan-ruppin' target='_new'>Eytan Ruppin (NCI)</a></li>
+      <li><a href='https://www.cs.tau.ac.il/~roded/' target='_new'>Roded Sharan (Tel Aviv University)</a></li>
+    </ul>
+  </div>
+  <div class="row">
+    <h5>Funding</h5>
+    <div class="col s12 m4 offset-m1">
+      <img src='{{site.baseurl}}/assets/img/University_of_Maryland_informal_seal.jpg' alt="University of Maryland" style="max-height:200px;width:auto" />
+    </div>
+    <div class="col s12 m4 offset-m1">
+      <img src='https://s0.wp.com/wp-content/themes/vip/czi/images/build/CZ_LOGO.svg' style="max-height:200px;width:auto" />
+    </div>
+  </div>
 </div>
