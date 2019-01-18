@@ -21,6 +21,8 @@ div#people div.card-content{ padding:10px; }
              display:block;
           }
           div#people h5{text-align: center;}
+}
+@media #{$medium-and-down} {
           div#group-contact-info{text-align:left}
     }
 div#people p, table.contact-info, div#people ul{margin-left:0px;}
