@@ -20,7 +20,6 @@ If you're on Twitter, I would recommend following (among many others):
 * [Jen Golbeck](https://twitter.com/jengolbeck)
 * [nextgenseek](https://twitter.com/nextgenseek)
 * [Quaid Morris](https://twitter.com/quaidmorris)
-* [Yaniv Erlich](https://twitter.com/erlichya)
 
 ##### Miscellany
 Including tools I've helped build, datasets I've helped create, etc.
