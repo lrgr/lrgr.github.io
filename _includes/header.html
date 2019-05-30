@@ -3,36 +3,36 @@
     <ul id="research-dropdown" class="dropdown-content">
       <li><a href="{{ site.baseurl }}/research">Overview</a></li>
       <li><a href="{{ site.baseurl }}/publications">Publications</a></li>
-      <li><a href="{{ site.baseurl }}/software" class="teal-text">Software</a></li>
+      <li><a href="{{ site.baseurl }}/software">Software</a></li>
     </ul>
-    <nav class="white blue-text z-depth-0">
+    <nav class="blue-text z-depth-0">
     <div class="nav-wrapper">
       <div class="container container-large">
-        <a class="brand-logo hide-on-small-only" href="{{ site.baseurl }}/" style="padding-left:0px;padding-right:10px">
-          <span class="light teal-text">{{ site.logo }}</span>
+        <a class="brand-logo hide-on-small-only" href="{{ site.baseurl }}/" style="padding:0px;">
+          {% include logo.svg %}
         </a>
-        <a class="brand-logo hide-on-med-and-up" href="{{ site.baseurl }}/" style="padding-left:0px;font-size:105%;padding-right:10px">
-          <span class="light teal-text">{{ site.logo }}</span>
+        <a class="brand-logo hide-on-med-and-up" href="{{ site.baseurl }}/">
+          {% include logo-icon.svg %}
         </a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger right teal-text"><i class="material-icons">menu</i></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="{{ site.baseurl }}/people" class="teal-text">People</a></li>
+            <li><a href="{{ site.baseurl }}/people">People</a></li>
             <li>
               <a class="dropdown-trigger" href="#!" data-target="research-dropdown">
-                <span class='teal-text'>Research</span>
-                <i class="material-icons right teal-text">arrow_drop_down</i>
+                <span>Research</span>
+                <i class="material-icons right">arrow_drop_down</i>
               </a>
             </li>
-            <li><a href="{{ site.baseurl }}/resources" class="teal-text">Resources</a></li>
-            <li><a href="{{ site.baseurl }}/teaching" class="teal-text">Teaching</a></li>
+            <li><a href="{{ site.baseurl }}/resources">Resources</a></li>
+            <li><a href="{{ site.baseurl }}/teaching">Teaching</a></li>
         </ul>
         <ul class="sidenav" id="mobile-demo">
-          <li><a href="{{ site.baseurl }}/people" class="teal-text">People</a></li>
-          <li><a href="{{ site.baseurl }}/publications" class="teal-text">Publications</a></li>
-          <li><a href="{{ site.baseurl }}/research" class="teal-text">Research</a></li>
-          <li><a href="{{ site.baseurl }}/resources" class="teal-text">Resources</a></li>
-          <li><a href="{{ site.baseurl }}/software" class="teal-text">Software</a></li>
-          <li><a href="{{ site.baseurl }}/teaching" class="teal-text">Teaching</a></li>
+          <li><a href="{{ site.baseurl }}/people">People</a></li>
+          <li><a href="{{ site.baseurl }}/publications">Publications</a></li>
+          <li><a href="{{ site.baseurl }}/research">Research</a></li>
+          <li><a href="{{ site.baseurl }}/resources">Resources</a></li>
+          <li><a href="{{ site.baseurl }}/software">Software</a></li>
+          <li><a href="{{ site.baseurl }}/teaching">Teaching</a></li>
         </ul>
       </div>
     </div>

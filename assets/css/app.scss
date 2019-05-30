@@ -3,11 +3,28 @@
 ---
 @import "materialize";
 @import "fontawesome";
+body{ background:rgb(247,245,242); font-family: 'Crimson Text', serif; color:rgb(48,48,48) }
+h1,h2,h3,h4,h5,h6{ font-family: 'Poppins', sans-serif; font-weight: lighter; color:rgb(48,48,48); }
+nav{ padding-top:10px;height:84px;background:rgb(247,245,242); }
+nav ul a{  font-family: 'Poppins', sans-serif;font-weight: lighter; color:rgb(48,48,48)}
+ul#research-dropdown a{  font-family: 'Poppins', sans-serif;font-weight: lighter; color:rgb(48,48,48)}
+a{color:rgb(255,132,94)}
+nav a{font-weight: bold;text-transform: uppercase; }
+a.brand-logo svg{height:62px; width:auto;}
+@media #{$small-and-down} {
+          a.brand-logo svg{ height:54px;}
+}
 
+footer.page-footer{background:rgb(48,48,48)}
+footer, footer a{color:rgb(247,245,242)}
+footer h1, footer h2,footer h3, footer h4, footer h5, footer h6{color:rgb(255,132,94);text-transform: uppercase;}
+div#research-topics div.card{background:rgb(48,48,48)}
+div#research-topics div.card-content{color:rgb(247,245,242)}
 div#research-topics div.card div.card-image{height:180px;}
 div#research-topics div.card div.card-image img{margin-left: 50%;transform: translateX(-50%);height:180px;overflow-x:none;width:auto;}
 div#news td.date{ vertical-align:top; text-align:right; }
 div#news table td{ padding:3px;  }
+.pagination li.active{background-color:rgb(255,132,94)}
 div#group-contact-info{text-align:right;font-size:120%;}
 
 div#people img, div.person img{ width:180px; height:180px; }
@@ -102,7 +119,6 @@ main {
 }
 nav .brand-logo {
     position: absolute;
-    color: #FFF;
     display: inline-block;
     font-size: 1.5rem;
     padding: 0px;
