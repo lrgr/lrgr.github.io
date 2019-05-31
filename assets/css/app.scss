@@ -12,12 +12,15 @@ nav{background:rgb(247,245,242);}
 nav a{font-weight: bold;text-transform: uppercase; }
 a.brand-logo svg{height:62px; width:auto;}
 
+div#home-page-header a{font-size:140%;padding-left:15px;}
 @media #{$medium-and-up} {
   nav{ padding-top:10px;height:84px; }
 }
 @media #{$small-and-down} {
   nav{ margin-top:5px;padding-bottom:5px;height:59px; }
   a.brand-logo svg{ height:54px;}
+  a.sidenav-trigger{margin-right:-5px;}
+  div#home-page-header{bottom:5px}
 }
 
 footer.page-footer{background:rgb(48,48,48)}
