@@ -12,7 +12,7 @@ top_navbar: true
     // Setup
     var software = d3.select('#software'); // Wrapper for all content
     var formatTime = d3.timeFormat("%b %d, %Y"); // E.g. June 30, 2018
-    var blacklist = d3.set(['explosig-server', 'explosig-docker', 'HubAlign']);
+    var blacklist = d3.set(['explosig-server', 'explosig-docker', 'explosig-connect', 'HubAlign']);
 
     // Get all public repos
     $.getJSON( "https://api.github.com/orgs/lrgr/repos", function( repos ) {
